@@ -25,6 +25,7 @@ def analogWrite(value):
 
 
 def setup():
+    GPIO.cleanup()
     global p
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(ledPin, GPIO.OUT)
