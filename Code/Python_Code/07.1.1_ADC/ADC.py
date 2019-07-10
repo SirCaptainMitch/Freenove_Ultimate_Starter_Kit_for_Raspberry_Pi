@@ -28,6 +28,7 @@ def loop():
 		time.sleep(0.01)
 
 def destroy():
+    bus.write_byte_data(address,cmd,0)	
 	bus.close()
 	
 if __name__ == '__main__':
