@@ -46,7 +46,7 @@ def loop():
 
 
 def destroy():
-    us.write_byte_data(address, cmd, 0)
+    bus.write_byte_data(address, cmd, 0)
     bus.close()
     GPIO.cleanup()
 
