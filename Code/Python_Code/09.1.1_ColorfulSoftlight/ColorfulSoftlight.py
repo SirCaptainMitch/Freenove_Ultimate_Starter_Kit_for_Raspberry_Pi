@@ -36,11 +36,11 @@ def setup():
     GPIO.setup(ledGreenPin, GPIO.OUT)
     GPIO.setup(ledBluePin, GPIO.OUT)
 
-    p_Red = GPIO.PWM(ledRedPin, 18)  # configure PMW to 3 pins of RGBLED
+    p_Red = GPIO.PWM(ledRedPin, 40)  # configure PMW to 3 pins of RGBLED
     p_Red.start(0)
-    p_Green = GPIO.PWM(ledGreenPin, 12)
+    p_Green = GPIO.PWM(ledGreenPin, 40)
     p_Green.start(0)
-    p_Blue = GPIO.PWM(ledBluePin, 6)
+    p_Blue = GPIO.PWM(ledBluePin, 40)
     p_Blue.start(0)
 
 
