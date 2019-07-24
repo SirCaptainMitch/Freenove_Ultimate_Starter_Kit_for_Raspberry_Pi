@@ -38,8 +38,10 @@ def loop():
     while True:
         value = analogRead(0)
         p.ChangeDutyCycle(value*100/255)
+        val = value*100/255
         voltage = value / 255.0 * 3.3
-        print('ADC Value : %d, Voltage : %.2f' % (value, voltage))
+        print('ADC Value : %d, Voltage : %.2f, Val : %d' %
+              (value, voltage, val))
         time.sleep(0.01)
 
 
