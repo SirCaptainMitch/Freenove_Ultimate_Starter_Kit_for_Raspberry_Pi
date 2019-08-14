@@ -41,7 +41,6 @@ def setup():
 
 def mapNUM(value, fromLow, fromHigh, toLow, toHigh):
     return (toHigh-toLow)*(value-fromLow) / (fromHigh-fromLow) + toLow
-# motor function: determine the direction and speed of the motor according to the ADC value to be input.
 
 
 def motor(ADC):
