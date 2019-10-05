@@ -29,7 +29,6 @@ def setup():
 def moveOnePeriod(direction, ms):
     for j in range(0, 4, 1):  # cycle for power supply order
         for i in range(0, 4, 1):  # assign to each pin, a total of 4 pins
-            print(j, i)
             GPIO.output(
                 motorPins[i], ((CWStep[j] == 1 << i) and GPIO.HIGH or GPIO.LOW))
 
