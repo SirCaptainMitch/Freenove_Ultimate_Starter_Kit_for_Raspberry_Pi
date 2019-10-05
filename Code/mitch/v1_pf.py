@@ -53,12 +53,12 @@ def motorStop():
 
 def loop():
     Positioncount = 0
-    print("total: %s", steps)
+    print("total: %s" % steps)
     while True:
         if GPIO.input(buttonPin) == GPIO.LOW:
             Positioncount += 1
             print('Cycle : %s' % Positioncount)
-            moveSteps(1, 3, steps)
+            moveSteps(1, 3, int(steps))
 
 
 def destroy():
