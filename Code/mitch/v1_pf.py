@@ -53,7 +53,7 @@ def loop():
     while True:
         if GPIO.input(buttonPin) == GPIO.LOW:
             Positioncount += 1
-            print('Button pressed ... cycle %s' % Positioncount)
+            print('Cycle : %s' % Positioncount)
             moveSteps(1, 3, 50)
 
 
