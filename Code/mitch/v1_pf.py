@@ -7,6 +7,7 @@
 ########################################################################
 import RPi.GPIO as GPIO
 import time
+import sys
 
 # define pins connected to four phase ABCD of stepper motor
 motorPins = (12, 16, 18, 22)
@@ -16,6 +17,8 @@ CCWStep = (0x01, 0x02, 0x04, 0x08)
 CWStep = (0x08, 0x04, 0x02, 0x01)
 
 buttonPin = 11    # define the buttonPin
+
+steps = len(sys.argv) - 1
 
 def setup():
     print('Program is starting...')
@@ -54,7 +57,7 @@ def loop():
         if GPIO.input(buttonPin) == GPIO.LOW:
             Positioncount += 1
             print('Cycle : %s' % Positioncount)
-            moveSteps(1, 3, 50)
+            moveSteps(1, 3, steps)
 
 
 def destroy():
