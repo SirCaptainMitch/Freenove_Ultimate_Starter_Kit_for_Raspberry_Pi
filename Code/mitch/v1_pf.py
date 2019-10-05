@@ -20,7 +20,8 @@ buttonPin = 11    # define the buttonPin
 
 def setup():
     print('Program is starting...')
-    GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     for pin in motorPins:
         GPIO.setup(pin, GPIO.OUT)
 
