@@ -16,7 +16,8 @@ CCWStep = (0x01, 0x02, 0x04, 0x08)
 CWStep = (0x08, 0x04, 0x02, 0x01)
 
 buttonPin = 11    # define the buttonPin
-Positioncount = 0
+global Positioncount = 0
+
 
 def setup():
     print('Program is starting...')
@@ -53,8 +54,9 @@ def loop():
     while True:
         if GPIO.input(buttonPin) == GPIO.LOW:
             Positioncount += 1
-            print('Button pressed ...')
+            print('Button pressed ... cycle %s' % Positioncount)
             moveSteps(1, 3, 50)
+
 
 def destroy():
     GPIO.cleanup()             # Release resource
