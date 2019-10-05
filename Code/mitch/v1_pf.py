@@ -55,7 +55,6 @@ def loop():
         if GPIO.input(buttonPin) == GPIO.LOW:
             print('Button pressed ...')
             moveSteps(1, 3, 512)
-            time.sleep(0.5)
         else:
             print('Button not pressed ...')
 
