@@ -16,7 +16,7 @@ CCWStep = (0x01, 0x02, 0x04, 0x08)
 CWStep = (0x08, 0x04, 0x02, 0x01)
 
 buttonPin = 11    # define the buttonPin
-
+Positioncount = 0
 
 def setup():
     print('Program is starting...')
@@ -52,6 +52,7 @@ def motorStop():
 def loop():
     while True:
         if GPIO.input(buttonPin) == GPIO.LOW:
+            Positioncount++
             print('Button pressed ...')
             moveSteps(1, 3, 50)
 
