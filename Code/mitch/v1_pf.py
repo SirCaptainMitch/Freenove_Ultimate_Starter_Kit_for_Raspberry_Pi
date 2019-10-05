@@ -55,8 +55,6 @@ def loop():
         if GPIO.input(buttonPin) == GPIO.LOW:
             print('Button pressed ...')
             moveSteps(1, 3, 50)
-        print('Button not pressed ...')
-
 
 def destroy():
     GPIO.cleanup()             # Release resource
