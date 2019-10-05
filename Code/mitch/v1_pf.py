@@ -52,7 +52,7 @@ def motorStop():
 def loop():
     while True:
         if GPIO.input(buttonPin) == GPIO.LOW:
-            PositionCount = Positioncount++
+            PositionCount += 1
             print('Button pressed ...')
             moveSteps(1, 3, 50)
 
