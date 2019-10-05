@@ -55,8 +55,7 @@ def loop():
         if GPIO.input(buttonPin) == GPIO.LOW:
             print('Button pressed ...')
             moveSteps(1, 3, 50)
-        else:
-            print('Button not pressed ...')
+        print('Button not pressed ...')
 
 
 def destroy():
