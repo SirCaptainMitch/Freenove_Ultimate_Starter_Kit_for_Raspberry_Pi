@@ -15,6 +15,8 @@ CCWStep = (0x01, 0x02, 0x04, 0x08)
 # define power supply order for coil for rotating clockwise
 CWStep = (0x08, 0x04, 0x02, 0x01)
 
+buttonPin = 17    # define the buttonPin
+
 
 def setup():
     print('Program is starting...')
@@ -49,11 +51,12 @@ def motorStop():
 
 def loop():
     while True:
-        # rotating   360 deg clockwise, a total of 2048 steps in a circle, namely, 512 cycles.
-        moveSteps(1, 3, 512)
-        time.sleep(0.5)
-        moveSteps(0, 3, 512)  # rotating 360 deg anticlockwise
-        time.sleep(0.5)
+        if GPIO.input(buttonPin) == GPIO.LOW:
+            print('Button pressed ...')
+            moveSteps(1, 3, 512)
+            time.sleep(0.5)
+        else:
+            print('Button not pressed ...')
 
 
 def destroy():
