@@ -18,7 +18,7 @@ CWStep = (0x08, 0x04, 0x02, 0x01)
 
 buttonPin = 11    # define the buttonPin
 
-steps = sys.argv[0]
+steps = sys.argv[1]
 
 def setup():
     print('Program is starting...')
