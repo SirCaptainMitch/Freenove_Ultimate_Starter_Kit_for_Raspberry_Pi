@@ -15,7 +15,7 @@ CCWStep = (0x01, 0x02, 0x04, 0x08)
 # define power supply order for coil for rotating clockwise
 CWStep = (0x08, 0x04, 0x02, 0x01)
 
-buttonPin = 17    # define the buttonPin
+buttonPin = 11    # define the buttonPin
 
 
 def setup():
