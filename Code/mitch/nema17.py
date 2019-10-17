@@ -1,32 +1,35 @@
 from time import sleep
-import RPI.GPIO as GPIO
+import RPi.GPIO as GPIO
 
-DIR = 20   # Direction GPIO Pin
-STEP = 21  # Step GPIO Pin
-CW = 1     # Clockwise Rotation
-CCW = 0    # Counterclockwise Rotation
-SPR = 200   # Steps per Revolution (360 / 1.8)
-
+PUL = 17
+DIR = 27
+ENA = 22
 GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(PUL, GPIO.OUT)
 GPIO.setup(DIR, GPIO.OUT)
-GPIO.setup(STEP, GPIO.OUT)
-GPIO.output(DIR, CW)
+GPIO.setup(ENA, GPIO.OUT)
 
-step_count = SPR
-delay = .0208
+delay = 0.01
+GPIO.output(ENA, GPIO.LOW)
 
-for x in range(step_count):
-    GPIO.output(STEP, GPIO.HIGH)
+GPIO.output(DIR, GPIO.LOW)
+for x in range(3200):
+    
+    GPIO.output(PUL, GPIO.HIGH)
     sleep(delay)
-    GPIO.output(STEP, GPIO.LOW)
+    GPIO.output(PUL, GPIO.LOW)
     sleep(delay)
+    print('moving forward')
 
-sleep(.5)
-GPIO.output(DIR, CCW)
-for x in range(step_count):
-    GPIO.output(STEP, GPIO.HIGH)
+sleep(1)
+GPIO.output(DIR, GPIO.HIGH)
+for x in range(3200):
+    
+    GPIO.output(PUL, GPIO.HIGH)
     sleep(delay)
-    GPIO.output(STEP, GPIO.LOW)
+    GPIO.output(PUL, GPIO.LOW)
     sleep(delay)
+    print('moving backward')
 
 GPIO.cleanup()
