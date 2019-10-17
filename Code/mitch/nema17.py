@@ -18,17 +18,17 @@ delay = .0208
 for x in range(step_count):
     print('moving forward')
     GPIO.output(PUL, GPIO.HIGH)
-    sleep(delay)
+    # sleep(delay)
     GPIO.output(PUL, GPIO.LOW)
-    sleep(delay)
+    # sleep(delay)
 
-sleep(.5)
-GPIO.output(DIR, CCW)
-for x in range(step_count):
-    print('moving Back, I think ')
-    GPIO.output(PUL, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(PUL, GPIO.LOW)
-    sleep(delay)
+# sleep(.5)
+# GPIO.output(DIR, CCW)
+# for x in range(step_count):
+#     print('moving Back, I think ')
+#     GPIO.output(PUL, GPIO.HIGH)
+#     sleep(delay)
+#     GPIO.output(PUL, GPIO.LOW)
+#     sleep(delay)
 
 GPIO.cleanup()
