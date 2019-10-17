@@ -2,7 +2,7 @@ from time import sleep
 import RPi.GPIO as GPIO
 
 DIR = 27   # Direction GPIO Pin
-PUL = 27  # Step GPIO Pin
+PUL = 17  # Step GPIO Pin
 CW = 1     # Clockwise Rotation
 CCW = 0    # Counterclockwise Rotation
 SPR = 200   # Steps per Revolution (360 / 7.5)
