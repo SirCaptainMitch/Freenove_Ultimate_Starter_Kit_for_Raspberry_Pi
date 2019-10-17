@@ -9,13 +9,14 @@ SPR = 200   # Steps per Revolution (360 / 7.5)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(DIR, GPIO.OUT)
-GPIO.setup(STEP, GPIO.OUT)
+GPIO.setup(PUL, GPIO.OUT)
 GPIO.output(DIR, CW)
 
 step_count = SPR
 delay = .0208
 
 for x in range(step_count):
+    print('moving forward')
     GPIO.output(PUL, GPIO.HIGH)
     sleep(delay)
     GPIO.output(PUL, GPIO.LOW)
@@ -24,6 +25,7 @@ for x in range(step_count):
 sleep(.5)
 GPIO.output(DIR, CCW)
 for x in range(step_count):
+    print('moving Back, I think ')
     GPIO.output(PUL, GPIO.HIGH)
     sleep(delay)
     GPIO.output(PUL, GPIO.LOW)
