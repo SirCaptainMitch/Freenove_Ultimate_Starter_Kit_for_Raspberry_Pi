@@ -14,7 +14,7 @@ delay = 0.01
 GPIO.output(ENA, GPIO.LOW)
 
 GPIO.output(DIR, GPIO.LOW)
-for x in range(3200):
+for x in range(200):
     
     GPIO.output(PUL, GPIO.HIGH)
     sleep(delay)
@@ -24,7 +24,7 @@ for x in range(3200):
 
 sleep(1)
 GPIO.output(DIR, GPIO.HIGH)
-for x in range(3200):
+for x in range(200):
     
     GPIO.output(PUL, GPIO.HIGH)
     sleep(delay)
