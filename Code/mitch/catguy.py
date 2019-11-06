@@ -10,7 +10,7 @@ def feed():
     GPIO.setup(12, GPIO.OUT)
 
     try:
-        servo = GPIO.PWM(18, 50)
+        servo = GPIO.PWM(12, 50)
         servo.start(12.5)
 
         # spin left, right, then left again rather than in a continuous circle
