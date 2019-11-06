@@ -6,7 +6,7 @@ import time
 
 def feed():
     # let the GPIO library know where we've connected our servo to the Pi
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setup(18, GPIO.OUT)
 
     try:
