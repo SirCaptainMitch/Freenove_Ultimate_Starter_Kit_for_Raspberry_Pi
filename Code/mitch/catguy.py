@@ -7,7 +7,7 @@ import time
 def feed():
     # let the GPIO library know where we've connected our servo to the Pi
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(18, GPIO.OUT)
+    GPIO.setup(12, GPIO.OUT)
 
     try:
         servo = GPIO.PWM(18, 50)
