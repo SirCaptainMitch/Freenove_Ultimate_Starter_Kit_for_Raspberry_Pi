@@ -8,6 +8,7 @@ def feed():
     # let the GPIO library know where we've connected our servo to the Pi
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
+    sleeptime = sys.argv[1]
 
     try:
         servo = GPIO.PWM(12, 50)
@@ -19,7 +20,7 @@ def feed():
             dutyCycle = 2.5 if (index % 2 == 0) else 12.5
             servo.ChangeDutyCycle(dutyCycle)
             # adjust the sleep time to have the servo spin longer or shorter in that direction
-            time.sleep(0.8)
+            time.sleep(sleeptime)
     finally:
         # always cleanup after ourselves
         servo.stop()
