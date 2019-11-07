@@ -5,6 +5,7 @@ import time
 import sys
 from decimal import Decimal
 
+
 def feed():
     # let the GPIO library know where we've connected our servo to the Pi
     GPIO.setmode(GPIO.BOARD)
