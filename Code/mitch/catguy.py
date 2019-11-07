@@ -22,6 +22,7 @@ def feed():
             dutyCycle = 2.5 if (index % 2 == 0) else 12.5
             servo.ChangeDutyCycle(dutyCycle)
             # adjust the sleep time to have the servo spin longer or shorter in that direction
+            print(sleeptime)
             time.sleep(sleeptime)
     finally:
         # always cleanup after ourselves
