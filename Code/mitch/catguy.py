@@ -3,14 +3,13 @@
 import RPi.GPIO as GPIO
 import time
 import sys
-from decimal import Decimal
 
 
 def feed():
     # let the GPIO library know where we've connected our servo to the Pi
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
-    sleeptime = Decimal(sys.argv[1])
+    sleeptime = float(sys.argv[1])
 
     try:
         servo = GPIO.PWM(12, 50)
