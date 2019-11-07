@@ -10,7 +10,7 @@ def feed():
     # let the GPIO library know where we've connected our servo to the Pi
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
-    sleeptime = int(sys.argv[1])
+    sleeptime = decimal(sys.argv[1])
 
     try:
         servo = GPIO.PWM(12, 50)
