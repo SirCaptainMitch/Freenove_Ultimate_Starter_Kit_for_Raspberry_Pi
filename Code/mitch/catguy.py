@@ -15,7 +15,7 @@ def feed():
 
         # spin left, right, then left again rather than in a continuous circle
         # to prevent the food from jamming the servo
-        for index in range(0, 1):
+        for index in range(0, 2):
             dutyCycle = 2.5 if (index % 2 == 0) else 12.5
             servo.ChangeDutyCycle(dutyCycle)
             # adjust the sleep time to have the servo spin longer or shorter in that direction
